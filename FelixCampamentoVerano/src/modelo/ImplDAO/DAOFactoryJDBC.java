@@ -7,6 +7,7 @@ import modelo.AbstractDAO.DaoFactory;
 import modelo.AbstractDAO.GrupoActividadMonitorDAO;
 import modelo.AbstractDAO.GrupoDAO;
 import modelo.AbstractDAO.MonitorDAO;
+import modelo.AbstractDAO.NinoEsoDAO;
 import modelo.acceso.AccessJdbc;
 
 public class DAOFactoryJDBC extends DaoFactory {
@@ -15,6 +16,7 @@ public class DAOFactoryJDBC extends DaoFactory {
 	private final GrupoDAO grupoDAO;
 	private final ActividadDAO actividadDAO;
 	private final GrupoActividadMonitorDAO grupoActividadMonitorDAO;
+	private final NinoEsoDAO ninoEsoDao;
 	
 	public DAOFactoryJDBC() throws ClassNotFoundException, SQLException {
 		super();
@@ -25,8 +27,8 @@ public class DAOFactoryJDBC extends DaoFactory {
 		this.grupoDAO=new GrupoDAOJDBC(accessJdbc);
 		this.actividadDAO=new ActividadDAOJDBC(accessJdbc);
 		this.grupoActividadMonitorDAO=new GrupoActividadMonitorDAOJDBC(accessJdbc);
+		this.ninoEsoDao =new NinoEsoDAOJDBC(accessJdbc);
 	}
-
 	//Los singleton son los daos
 	@Override
 	public MonitorDAO getMonitorDAO() {
@@ -47,9 +49,9 @@ public class DAOFactoryJDBC extends DaoFactory {
 	public GrupoActividadMonitorDAO getGrupoActividadMonitorDAO() {
 		return this.grupoActividadMonitorDAO;
 	}
-	
-	
-	
-	
 
+	@Override
+	public NinoEsoDAO getNinoEsoDAO() {
+		return this.ninoEsoDao;
+	}
 }

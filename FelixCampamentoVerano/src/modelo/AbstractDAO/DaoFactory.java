@@ -20,7 +20,7 @@ public abstract class DaoFactory {
     public abstract GrupoDAO getGrupoDAO();
     public abstract MonitorDAO getMonitorDAO();
 //    public abstract TiendaDAO getTiendaDAO();
-//    public abstract NinoEsoDAO getNinoEsoDAO();
+    public abstract NinoEsoDAO getNinoEsoDAO();
 //    public abstract NinoPrimariaDAO getNinoPrimariaDAO();
     public abstract GrupoActividadMonitorDAO getGrupoActividadMonitorDAO();
 }
